@@ -12,9 +12,14 @@ def calc_age():
     response_key = search_dict.get('response')
     items_key = response_key.get('items')
 
-    list_dikt= items_key[3]
-    print(list_dikt)
-    print(type(list_dikt))
+
+    #list_dikt= items_key[1]
+    iter_item = iter(items_key)
+    print(next(iter_item,None))
+
+
+    #print(list_dikt)
+    #print(type(list_dikt))
 
 
 calc_age()
