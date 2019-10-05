@@ -1,3 +1,4 @@
+
 import requests
 from datetime import datetime
 import locale
@@ -14,16 +15,26 @@ def calc_age():
     search_dict = r.json()
     for item in search_dict['response']['items']:
         bdates = item.get('bdate')
+        d = []
+        try:
+            for i in datetime.strptime(bdates, "%d.%m.%Y"):
+                if i != None:
+                    d = d.append(i)
 
-        >> > import dateutil
-        >> > dates = []
-        >> > dates.append('12 1 2017')
-        >> > dates.append('1 1 2017')
-        >> > dates.append('1 12 2017')
-        >> > dates.append('June 1 2017 1:30:00AM')
-        >> > [parser.parse(x) for x in dates]
 
-        t = DateTime.ParseExact("24/01/2013", "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+
+        except TypeError:
+            pass
+        except ValueError:
+            pass
+
+
+
+
+
+
+
 calc_age()
 
 
